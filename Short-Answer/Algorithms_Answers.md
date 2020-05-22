@@ -8,7 +8,7 @@ a) The runtime complexity of this block of code would be `O(n^3)`, where n is th
 b) The runtime complexity of this block of code would be `O(n log n)`, where `n` is the input size. This is because the outer for loop runs `n` times, for a runtime complexity of `O(n)`. Meanwhile, the value of `j` in the inner while loop is doubling rather than incrementing, resulting in a runtime complexity of `O(log n)`. For nested loops, we want to multiply the runtime complexities, so we would get a combined runtime complexity of `O(n log n)`
 
 
-c) The runtime complexity of this block of code would be `O(n)` (linear), where `n` is bunnies. This block of code demonstrates recursion and will run `n` times, decrementing bunnies down to the base case value of zero.
+c) The runtime complexity of this block of code would be `O(n)` (linear), where `n` is bunnies. This block of code demonstrates recursion and will run `n` times, decrementing bunnies down to the base case value of zero. This is a sneaky one, it's just an algorithm that calculates how many ears bunnies might have.
 
 ## Exercise II
 
@@ -19,9 +19,11 @@ Proposed algorithm:
     3. If the egg doesn't break, eliminate current floor and all the floors below.
     4. Repeat the process with the none eliminated floors until there are only two floors left; f would be the higher of the two floors.
 
-Pseudo code (iterative solution):
+Pseudo code:
 
-Solution assume a function dropped_egg_breaks() that returns True if the egg dropped from a particular floor breaks or False if the dropped egg doesn't break.
+Solution assume function dropped_egg_breaks() that returns True if the egg dropped from a particular floor breaks or False if the dropped egg doesn't break.
+
+Divide & Conquer  
 
 ``` python
 def iterative_minimize_broken_eggs(floors):

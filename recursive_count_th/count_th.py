@@ -18,9 +18,12 @@ def count_th(word):
         wtf = count_th(word[1:])
         # recurse with rest of the chars (split the word) if no chars found
         return count_th(word[1:])
-    
 
-word = "th"
+# Build-in method
+# def count_th(word):
+#     return word.count('th')   
+
+word = "THtHThth"
 # THtHThth 0
 # HtHThth 0
 # tHThth 0
@@ -30,6 +33,3 @@ word = "th"
 # th 1
 print(count_th(word))
 
-# Build-in method
-# def count_th(word):
-#     return word.count('th')
