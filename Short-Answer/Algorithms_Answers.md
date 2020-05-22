@@ -14,10 +14,10 @@ c) The runtime complexity of this block of code would be `O(n)` (linear), where 
 
 Proposed algorithm:
 
-    Start at the middle floor.
-    Drop an egg from this floor. If the egg breaks, eliminate all the floors above.
-    If the egg doesn't break, eliminate current floor and all the floors below.
-    Repeat the process with the none eliminated floors until there are only two floors left; f would be the higher of the two floors.
+    1. Start at the middle floor.
+    2. Drop an egg from this floor. If the egg breaks, eliminate all the floors above.
+    3. If the egg doesn't break, eliminate current floor and all the floors below.
+    4. Repeat the process with the none eliminated floors until there are only two floors left; f would be the higher of the two floors.
 
 Pseudo code (iterative solution):
 
@@ -46,7 +46,7 @@ def iterative_minimize_broken_eggs(floors):
     # while loops ends when we're left with two floors, return the higher floor as f
     return high_floor
 
-    # keep in mind that floors list is 0 indexed, so f would correspond to the "f +1"th floor
+    # floors list is 0 indexed, so f would correspond to the "f + 1"th floor
   ```
 
 Runtime complexity:
