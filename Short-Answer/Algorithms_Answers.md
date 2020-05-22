@@ -21,12 +21,12 @@ Proposed algorithm:
 
 Pseudo code:
 
-Solution assume function dropped_egg_breaks() that returns True if the egg dropped from a particular floor breaks or False if the dropped egg doesn't break.
+Solution assume function `dropped_eggs()` that returns True if the egg dropped from a particular floor breaks or False if the dropped egg doesn't break.
 
 Divide & Conquer  
 
 ``` python
-def iterative_minimize_broken_eggs(floors):
+def iterative_broken_eggs(floors):
     # initialize low floor and high floors
     low_floor = 0
     high_floor = len(floors) - 1
@@ -38,19 +38,22 @@ def iterative_minimize_broken_eggs(floors):
         middle_floor = (low_floor + high_floor)) // 2
 
         # if dropped egg breaks, reset high floor to eliminate above floors
-        if dropped_egg_breaks(middle_floor):
+        if dropped_eggs(middle_floor):
             high_floor = middle_floor
 
         # if dropped egg doesn't break, reset low floor to eliminate current floor and all floors below
-        elif not dropped_egg_breaks(middle_floor):
+        elif not dropped_eggs(middle_floor):
             low_floor = middle_floor + 1
 
     # while loops ends when we're left with two floors, return the higher floor as f
     return high_floor
 
-    # floors list is 0 indexed, so f would correspond to the "f + 1"th floor
+    # floors list is 0 indexed, so `f` would correspond to the "f + 1"th floor
   ```
 
 Runtime complexity:
 
-This solution implements a variation on a Binary Search and thus has a logarithmic runtime complexity of `O(log n)`. As the number of floors increases, the runtime used will grow at a slightly slower rate, so this solution would perform better than linear `O(n)`.
+This solution implements on a Binary Search and thus has a logarithmic runtime complexity of `O(log n)`. As the number of floors increases, the runtime used will grow at a slightly slower rate, so this solution would perform better than linear `O(n)`.
+
+
+*****************
